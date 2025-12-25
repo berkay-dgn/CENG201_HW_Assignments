@@ -6,16 +6,17 @@ public class PatientTest {
         Patient p3=new Patient(30,"serhat",3,33);
         Patient p4=new Patient(40,"mehmet",5,44);
         Patient p5=new Patient(50,"ahmet",9,55);
-        System.out.println(list.isEmpty());// list boş olup olmadığını kontrol etmek için kullandım
         list.addPatient(p1);
         list.addPatient(p2);
         list.addPatient(p3);
         list.addPatient(p4);
         list.addPatient(p5);
         System.out.println(list.isEmpty());
-        list.printList(); // burda println kullanmamın nedeni kodun doğru şekilde add yapıp yapmadığını kontrol etmek
+        list.printList();
+        // ı use this method becasue ı checked my Patient list class work correct or not
         list.removePatient(10);
-       // list.removePatient(50); bunu kullandım çünkü remove fonk taili silip silmediğini göremek istedim
+        //list.removePatient(50);
+        // ı deleted 10 and 50 becasue ı chechked my remove method can delete tail and head correctly
         System.out.println( );
         list.printList();
     }

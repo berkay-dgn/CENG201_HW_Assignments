@@ -10,6 +10,7 @@ public class DischargeStack {
         temp.data=record;
         temp.link=top;
         top=temp;
+        // ı add new node in head because it is more fruitful way  for big o
     }
     public DischargeRecord peek(){
         Node temp=top;

@@ -16,7 +16,8 @@ public class PatientList {
         head =null;
         tail=null;
     }
-    public boolean isEmpty(){// bu methodu yazmamın amacı test classda listenin boş olup olmadığını kontrol etmek
+    public boolean isEmpty(){
+        // ı use this method for checking this list empty
         if(head==tail){
             return true;
         }else{

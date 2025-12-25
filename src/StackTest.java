@@ -1,7 +1,7 @@
 public class StackTest {
     static void main() {
         DischargeRecord r1=new DischargeRecord(1,System.currentTimeMillis());
-        // hastanın tam kaçta taburcu olduğunu göstermek için System.currentTimeMillis() kullandım
+
         DischargeRecord r2=new DischargeRecord(2,System.currentTimeMillis());
         DischargeRecord r3=new DischargeRecord(3,System.currentTimeMillis());
         DischargeRecord r4=new DischargeRecord(4,System.currentTimeMillis());
