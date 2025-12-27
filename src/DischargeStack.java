@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 public class DischargeStack {
     private class Node{
         DischargeRecord data;
@@ -31,11 +33,11 @@ public class DischargeStack {
             System.out.println("this stack is empty ");
         }
         while(temp!=null){
-            System.out.print(temp.data);
+            int id = temp.data.getPatientId();
+            String time = temp.data.getFormattedTime();
+            System.out.println("Patient ID: " + id + " | Discharge Time: " + time);
             temp=temp.link;
-            if(temp!=null){
-                System.out.print("-->");
-            }
+
         }
     }
 }

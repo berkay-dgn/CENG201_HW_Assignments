@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class PatientList {
     private class Node{
         private Patient data;
@@ -33,7 +35,7 @@ public class PatientList {
     public void printList(){
         Node temp=head;
         while(temp!=null){
-            System.out.println(temp.data);
+            IO.println("Patient ID: "+temp.data.getId()+" Name: "+temp.data.getPatientName()+ " Patient Age: "+temp.data.getPatientAge()+" Severity level:" +temp.data.getSeverityLevel());
             temp=temp.next;
         }
     }
@@ -65,6 +67,33 @@ public class PatientList {
             prev=temp;
             temp=temp.next;
         }
-
+    }
+    // ı end buble sort patient list class because this class has patient's informations
+    public void buble(){
+        if(head==null){
+            System.out.println(" this list is empty");
+        }
+        boolean swapped;
+        do{
+            swapped=false;
+            PatientList.Node temp=head;
+            while(temp.next!=null){
+                Patient p=temp.data;
+                Patient p2=temp.next.data;
+                if(p.getSeverityLevel()< p2.getSeverityLevel()){
+                    // this if conditon give priority whose severity level is higher .
+                    temp.data=p2;
+                    temp.next.data=p;
+                    swapped=true;
+                } else if (p.getSeverityLevel() == p.getSeverityLevel()
+                        && p.getPatientAge() < p2.getPatientAge()) {
+                    // this else if conditon whoever is older they give priority to them.
+                    temp.data=p2;
+                    temp.next.data=p;
+                    swapped=true;
+                }
+                temp=temp.next;
+            }
+        }while(swapped);
     }
 }

@@ -4,10 +4,6 @@ public class Treatmentrequest {
     private int patientId;
     private long Arrivaltime;
     private boolean isPriority;// ı add this attributes for hospital system
-    Treatmentrequest(int patientId, long Arrivaltime){
-        this.patientId=patientId;
-        this.Arrivaltime=Arrivaltime;
-    }
     Treatmentrequest(int patientId, long Arrivaltime,boolean isPriority){
         this.patientId=patientId;
         this.Arrivaltime=Arrivaltime;
@@ -15,13 +11,15 @@ public class Treatmentrequest {
     }
 
     public int getPatientId(){return this.patientId;}
-    // arrival time will show  like hh: mm
+    // arrival time will show  like dd: hh: mm
     public String getFormattedArrivalTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+
         return sdf.format(new Date(Arrivaltime));
     }
     public String toString(){
-        return this.patientId+"  come in this time  "+" " +this.getFormattedArrivalTime()+" "+this.isPriority;
+        return " patient ıd is : "+patientId+" ,"+" patient's discharge time :"+getFormattedArrivalTime()+
+                " ,"+" is patient has priority: "+isPriority;
         // ı override toString because it show patient ıd and his arrival timme
     }
 

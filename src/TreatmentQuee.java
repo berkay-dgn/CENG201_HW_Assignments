@@ -28,14 +28,13 @@ public class TreatmentQuee {
         size++;
     }
     public boolean isEmpty(){
-        if(rear==null&&front==null){
-            return true;
-        }else{
-            return false;
-        }
+        return size==0;
     }
-
     public Treatmentrequest dequee(){
+        if (this.front == null) { // tail is empty
+            System.out.println("Warning: Queue is empty, cannot dequeue!");
+            return null;
+        }
         if(isEmpty()){
             System.out.println("this quee is empty ");
 
@@ -54,11 +53,9 @@ public class TreatmentQuee {
         }
         Node temp=front;
         while(temp!=null){
-            System.out.print(temp.data);
+            System.out.println(temp.data);
             temp=temp.next;
-            if(temp!=null){
-                System.out.print("-->");
-            }
+
         }
 
 
